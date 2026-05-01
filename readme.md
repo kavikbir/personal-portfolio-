@@ -11,23 +11,11 @@ Welcome to my professional portfolio! This project is a showcase of my journey a
 - **Personal Touches**: Reflections of my interests in gaming and technology.
 
 ## 🔗 Live Exploration
-Experience the portfolio live: [personalkritagya.netlify.app](https://personalkritagya.netlify.app/)
+Experience the portfolio live:
 
 ---
 
-## 🛠️ Featured Projects
 
-### 🕹️ Kritagya's Arcade Machine
-*An interactive arcade experience.*
-- [Source Code](https://github.com/kavikbir/kritagya-arcade-machine) | [Live Demo](https://kritagya-arcade-machine.vercel.app/)
-
-### 💻 Kritagya's OS
-*A web-based operating system simulation.*
-- [Source Code](https://github.com/kavikbir/kritagya-os) | [Live Demo](https://personalkritagya.netlify.app/)
-
-### 🎨 Kritagya's Art Gallery
-*A virtual gallery showcasing digital art.*
-- [Source Code](https://github.com/kavikbir/kritagya-art-gallery) | [Live Demo](https://kritagya-art-gallery.vercel.app/)
 
 ---
 
@@ -60,8 +48,6 @@ npm run build
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 *Created with ❤️ by Kritagya Kandpal*
