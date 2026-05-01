@@ -74,47 +74,47 @@ export default class Whiteboard {
     planeMesh.name = "whiteboardCanvas";
     this.model.mesh.add(planeMesh);
 
-    const image = this.resources.items.texture_paint.source.data;
-    image.src = image.src;
-
     this.drawingCanvas = document.getElementById("drawing-canvas");
     this.drawingContext = this.drawingCanvas.getContext("2d");
-    image.onload = () => {
-      this.drawingContext.drawImage(
-        image,
-        0,
-        0,
-        this.drawingCanvas.width,
-        this.drawingCanvas.height
-      );
-
-      this.canvasTexture = new CanvasTexture(this.drawingCanvas);
-
-      this.canvasTexture.anisotropy =
-        this.renderer.capabilities.getMaxAnisotropy();
-
-      this.canvasTexture.generateMipmaps = true;
-
-      this.canvasTexture.magFilter = LinearFilter;
-      this.canvasTexture.minFilter = LinearMipmapLinearFilter;
-
-      this.whiteboardMaterial.map = this.canvasTexture;
-      this.whiteboardMaterial.needsUpdate = true;
-    };
 
     this.drawingContext.lineWidth = 8;
     this.drawingContext.lineJoin = "round";
     this.drawingContext.lineCap = "round";
     this.drawingContext.fontSmoothingEnabled = true;
+
     // draw white background
     this.drawingContext.fillStyle = "white";
     this.drawingContext.fillRect(0, 0, 2048, 1024);
 
     this.drawingCanvas.needsUpdate = true;
     this.canvasTexture = new CanvasTexture(this.drawingCanvas);
+    this.canvasTexture.anisotropy = this.renderer.capabilities.getMaxAnisotropy();
+    this.canvasTexture.generateMipmaps = true;
+    this.canvasTexture.magFilter = LinearFilter;
+    this.canvasTexture.minFilter = LinearMipmapLinearFilter;
 
     this.whiteboardMaterial.map = this.canvasTexture;
-    this.whiteboardMaterial.map.needsUpdate = true;
+    this.whiteboardMaterial.needsUpdate = true;
+
+    document.fonts.ready.then(() => {
+      this.drawingContext.fillStyle = "white";
+      this.drawingContext.fillRect(0, 0, 2048, 1024);
+
+      this.drawingContext.fillStyle = "black";
+      this.drawingContext.textAlign = "center";
+      
+      this.drawingContext.font = "bold 120px Saeada, sans-serif";
+      this.drawingContext.fillText("KRITAGYA KANDPAL", 1024, 350);
+      
+      this.drawingContext.font = "bold 60px Saeada, sans-serif";
+      this.drawingContext.fillText("AI & Automation Engineer", 1024, 500);
+      
+      this.drawingContext.font = "50px Saeada, sans-serif";
+      this.drawingContext.fillText("Welcome to my interactive portfolio!", 1024, 700);
+      this.drawingContext.fillText("Feel free to draw here.", 1024, 800);
+
+      this.whiteboardMaterial.map.needsUpdate = true;
+    });
   }
 
   throttle(func, delay) {

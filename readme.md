@@ -1,41 +1,67 @@
-# Joan Ramos Refusta's Portfolio
-Welcome!
-I've always wanted to create a portfolio showcasing my skills with GLSL shaders and Three.js, along with a platform to display all my side projects and experiments. This portfolio serves as a showcase of my journey as a 3D developer and a place to explore my various side projects, including video games. I've included elements that reflect my personal interests, such as my favorite video games, an interactive Rubik's cube, and an arcade machine.
+# 🚀 Kritagya Kandpal's Portfolio
 
-You can now explore it [here](https://joanramosrefusta.com/).
+![Portfolio Banner](./static/assets/banner.png)
 
+Welcome to my professional portfolio! This project is a showcase of my journey as a **3D Developer** and **AI & Automation Engineer**. It features advanced GLSL shaders, Three.js implementations, and a curated collection of my side projects and experiments.
 
-## Links
+## 🌟 Key Features
+- **3D Interactive Scene**: Built with Three.js and GLSL.
+- **Interactive Elements**: Includes a playable Rubik's cube and an arcade machine.
+- **Project Showcase**: A dedicated space for my video games and automation tools.
+- **Personal Touches**: Reflections of my interests in gaming and technology.
 
-### Joan's Arcade Machine
-- [Source Code](https://github.com/jrefusta/joan-arcade-machine)
-- [Live Demo](https://joan-arcade-machine.vercel.app/)
+## 🔗 Live Exploration
+Experience the portfolio live: [personalkritagya.netlify.app](https://personalkritagya.netlify.app/)
 
-### Joan's OS
-- [Source Code](https://github.com/jrefusta/joan-os)
-- [Live Demo](https://joan-os.vercel.app/)
+---
 
-### Joan's Art Gallery
-- [Source Code](https://github.com/jrefusta/joan-art-gallery)
-- [Live Demo](https://joan-art-gallery.vercel.app/)
+## 🛠️ Featured Projects
 
-## Setup
+### 🕹️ Kritagya's Arcade Machine
+*An interactive arcade experience.*
+- [Source Code](https://github.com/kavikbir/kritagya-arcade-machine) | [Live Demo](https://kritagya-arcade-machine.vercel.app/)
 
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+### 💻 Kritagya's OS
+*A web-based operating system simulation.*
+- [Source Code](https://github.com/kavikbir/kritagya-os) | [Live Demo](https://personalkritagya.netlify.app/)
 
-``` bash
-# Install dependencies (only the first time)
-npm install
+### 🎨 Kritagya's Art Gallery
+*A virtual gallery showcasing digital art.*
+- [Source Code](https://github.com/kavikbir/kritagya-art-gallery) | [Live Demo](https://kritagya-art-gallery.vercel.app/)
 
-# Run the local server at localhost:8080
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/en/download/) (v14 or higher recommended)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kavikbir/joan-portfolio.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+Run the local development server (usually at `localhost:8080`):
+```bash
 npm run dev
+```
 
-# Build for production in the dist/ directory
+### Production Build
+Generate a production-ready bundle in the `dist/` directory:
+```bash
 npm run build
 ```
 
-## License
+---
+
+## 📜 License
 This project is licensed under the [MIT License](LICENSE).
 
-
+---
+*Created with ❤️ by Kritagya Kandpal*

@@ -1,4 +1,4 @@
-import { Mesh, MeshBasicMaterial, SRGBColorSpace } from "three";
+import { Mesh, MeshBasicMaterial, SRGBColorSpace, Box3, Vector3, Group, CanvasTexture, PlaneGeometry, DoubleSide } from "three";
 import Experience from "./Experience.js";
 
 export default class Baked {
@@ -69,6 +69,61 @@ export default class Baked {
 
     this.scene.add(this.model.linkedin);
     this.scene.add(this.model.github);
+    
+    this.model.itchio.visible = false;
     this.scene.add(this.model.itchio);
+
+    // Create Instagram Logo Texture
+    const canvas = document.createElement("canvas");
+    canvas.width = 512;
+    canvas.height = 512;
+    const ctx = canvas.getContext("2d");
+    
+    const gradient = ctx.createLinearGradient(0, 512, 512, 0);
+    gradient.addColorStop(0, "#f09433");
+    gradient.addColorStop(0.25, "#e6683c");
+    gradient.addColorStop(0.5, "#dc2743");
+    gradient.addColorStop(0.75, "#cc2366");
+    gradient.addColorStop(1, "#bc1888");
+    
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.roundRect(0, 0, 512, 512, 100);
+    ctx.fill();
+    
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 40;
+    ctx.beginPath();
+    ctx.roundRect(100, 100, 312, 312, 80);
+    ctx.stroke();
+    
+    ctx.lineWidth = 40;
+    ctx.beginPath();
+    ctx.arc(256, 256, 80, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(350, 160, 20, 0, Math.PI * 2);
+    ctx.fill();
+    
+    const instaTexture = new CanvasTexture(canvas);
+    instaTexture.colorSpace = SRGBColorSpace;
+    const instaMaterial = new MeshBasicMaterial({ map: instaTexture, transparent: true, side: DoubleSide });
+    
+    const instaMesh = new Mesh(new PlaneGeometry(0.18, 0.18), instaMaterial);
+    
+    const box = new Box3().setFromObject(this.model.itchio);
+    const center = new Vector3();
+    box.getCenter(center);
+    
+    instaMesh.position.copy(center);
+    instaMesh.position.y += 0.05;
+    instaMesh.rotation.x = -Math.PI / 8;
+    
+    this.model.instagram = new Group();
+    this.model.instagram.add(instaMesh);
+    this.model.instagram.name = "instagram";
+    this.scene.add(this.model.instagram);
   };
 }
