@@ -61,6 +61,9 @@ export default class RightMonitorScreen {
     iframe.style.width = this.screenMonitorSize.width + "px";
     iframe.style.height = this.screenMonitorSize.height + "px";
     iframe.style.padding = MONITOR_IFRAME_PADDING;
+    iframe.style.border = "none";
+    iframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture");
+    iframe.setAttribute("allowfullscreen", "");
 
     iframe.style.transparent = true;
     iframe.id = "right-monitor-screen";

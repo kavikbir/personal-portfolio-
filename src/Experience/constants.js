@@ -111,7 +111,7 @@ export const RIGHT_MONITOR_CSS_OBJECT_POSITION = new Vector3(
 
 export const RIGHT_MONITOR_CSS_OBJECT_SCALE = new Vector3(0.00102, 0.00102, 1);
 export const RIGHT_MONITOR_CSS_OBJECT_ROTATION_Y = (-7.406 * Math.PI) / 180;
-export const RIGHT_MONITOR_IFRAME_SRC = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1";
+export const RIGHT_MONITOR_IFRAME_SRC = "https://www.youtube.com/embed/lTRiuFIWV54?autoplay=1&mute=1&loop=1&playlist=lTRiuFIWV54";
 export const RIGHT_MONITOR_CAMERA_POSITION = new Vector3(
   2.13997,
   2.60716,
