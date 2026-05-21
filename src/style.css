@@ -12,12 +12,14 @@ html,
 body {
   background-color: #072446;
   overflow: hidden;
+  touch-action: none;
 }
 
 #webgl {
   width: 100vw;
   height: 100vh;
   pointer-events: auto;
+  touch-action: none;
 }
 
 #cssArcadeMachine {
@@ -260,4 +262,68 @@ body {
   width: 60%;
   color: #eda72d;
   z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    font-size: 14px;
+    height: auto;
+    padding: 12px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    top: -160px; /* offscreen height to hide when wrapped */
+  }
+
+  .banner-link {
+    margin: 2px 6px;
+    font-size: 13px;
+  }
+
+  .banner-link:hover {
+    font-size: 14px;
+  }
+
+  .circular-button {
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-size: 60%;
+  }
+
+  .circular-button:hover {
+    background-size: 65%;
+  }
+
+  .audio-button {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    background-size: 45%;
+  }
+
+  .button-row {
+    bottom: 90px;
+  }
+
+  .circular-button-whiteboard {
+    width: 60px;
+    height: 60px;
+    margin: 0px 8px;
+    background-size: 60%;
+  }
+
+  .circular-button-whiteboard:hover {
+    background-size: 65%;
+  }
+
+  .rubik-message {
+    font-size: 1.1rem;
+    width: 80%;
+    bottom: 15px;
+  }
 }

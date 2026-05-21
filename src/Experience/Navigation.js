@@ -101,6 +101,7 @@ export default class Navigation {
         this.currentStage !== null &&
         this.currentStage !== "rubikGroup"
       ) {
+        this.webglElement.style.pointerEvents = "auto";
         if (this.whiteboardButons.classList.contains("show-button-row")) {
           this.whiteboardButons.classList.remove("show-button-row");
         }
@@ -240,6 +241,7 @@ export default class Navigation {
   }
 
   flyToPosition = (key) => {
+    this.webglElement.style.pointerEvents = "auto";
     const audioManager = this.experience.world.audioManager;
     if (key !== "rubikGroup" && this.currentStage == "rubikGroup") {
       this.rubikMessage.classList.remove("show-rubik-message");
@@ -451,6 +453,15 @@ export default class Navigation {
         if (this.currentStage === null) {
           this.orbitControls.enableDamping = true;
           this.orbitControls.enabled = true;
+          this.webglElement.style.pointerEvents = "auto";
+        } else if (
+          ["leftMonitor", "rightMonitor", "arcadeMachine"].includes(
+            this.currentStage
+          )
+        ) {
+          this.webglElement.style.pointerEvents = "none";
+        } else {
+          this.webglElement.style.pointerEvents = "auto";
         }
         this.isCameraMoving = false;
         this.updateStage();
@@ -561,6 +572,7 @@ export default class Navigation {
   activateScene() {
     this.deactivateActivityControls();
     this.currentStage = null;
+    this.webglElement.style.pointerEvents = "auto";
     this.activateControls();
   }
 
@@ -592,13 +604,13 @@ export default class Navigation {
     // Hide banner
     if (this.currentStage === null) {
       if (currentZoom < 25 && this.mouse.y < 0.9) {
-        this.banner.style.top = "-60px";
+        this.banner.style.top = "-150px";
       } else {
         this.banner.style.top = "0px";
       }
     } else {
       if (this.mouse.y < 0.9) {
-        this.banner.style.top = "-60px";
+        this.banner.style.top = "-150px";
       } else {
         this.banner.style.top = "0px";
       }
